@@ -1,5 +1,6 @@
 package pineapple.app.authz_server.config;
 
+import com.fasterxml.jackson.core.PrettyPrinter;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
