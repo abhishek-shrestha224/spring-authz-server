@@ -43,9 +43,16 @@ public class AppConfig {
             .clientSecret("pineapple")
             .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
             .redirectUri("http://localhost:8080/login/oauth2/code")
+            .scope("openid")
+            .scope("profile")
+            .scope("email")
             .tokenSettings(
                 TokenSettings.builder().accessTokenTimeToLive(Duration.ofHours(1)).build())
-            .clientSettings(ClientSettings.builder().requireProofKey(false).build())
+            .clientSettings(
+                ClientSettings.builder()
+                    .requireProofKey(false)
+                    .requireAuthorizationConsent(true)
+                    .build())
             .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
             .build();
 
